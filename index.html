@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crystal Collector Game</title>
+    <!--Reset link-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!--CSS link-->
+    <style rel="stylesheet" href="assets/css/style.css"></style>
+</head>
+
+<body>
+
+    <h1>Number to Guess<span id="number-to-guess"></span></h1>
+    <div id="diamond">
+        <img src="https://cdn.pixabay.com/photo/2016/02/14/09/45/precious-1199183__340.jpg" alt="crystals" style="width: 300px;">
+    </div>
+
+    <div id="blue">
+        <img src="https://image.shutterstock.com/z/stock-photo-quartz-rainbow-titanium-aura-crystal-cluster-on-black-background-458219668.jpg"
+            alt="blue crystals" style="width: 300px; text-align: center;">
+    </div>
+
+    <div id="amethyst">
+
+        <img src="https://image.shutterstock.com/z/stock-photo-crystal-stone-macro-mineral-surface-purple-rough-amethyst-quartz-crystals-551962786.jpg"
+            alt="amethyst" style="width: 300px;">
+    </div>
+
+    <div id="ruby">
+
+        <img src="https://image.shutterstock.com/z/stock-photo-rubies-and-raw-crystal-gems-concept-with-closeup-of-a-bunch-of-red-rough-uncut-ruby-crystals-790494358.jpg"
+            alt="ruby" style="width:300px">
+    </div>
+
+
+    <!-- jQuery library link-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var targetNumber = 50;
+        $("#number-to-guess").text(targetNumber);
+        var counter = 0;
+        var NumberOptions = [5, 10, 20, 30];
+        var increments = NumberOptions[Math.round(Math.random())];
+
+        $("#diamond").on("click", function () {
+
+            counter += increments;
+            alert("your number is: " + counter);
+            if (counter === targetNumber) {
+                alert("You WIN!");}
+         else if (counter > targetNumber){
+                    alert("You Lose!");
+                }
+            }
+       );
+    </script>
+</body>
+
+</html>
