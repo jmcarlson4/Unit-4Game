@@ -1,16 +1,19 @@
 #diamond {
-    width: 200px;
+    width: 100px;
+    padding-left: 100px;
 }
 
-#blue {
+.diamond-image {
     width: 200px;
     text-align: center;
 }
 
-#amethyst {
-    width: 200px;
+body {
+    background-color: cadetblue;
 }
 
-#ruby {
-    width: 200px;
+h1 {
+    font-family: fantasy;
+    text-align: center;
+    font-size: 200%;
 }
