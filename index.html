@@ -14,7 +14,9 @@
     <h1>Random Number<span id="number-to-guess"></span></h1>
     <div id="diamond">
     </div>
-    
+    <p id="Wins" ></p>
+    <p id="Losses"></p> 
+
     <!-- jQuery library link-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -38,35 +40,34 @@
 
             counter += diamondValue;
             alert("Your score: " + counter);
-            if (counter === RandomNumber) {
+            if (counter == RandomNumber) {
                 alert("You WIN!");
-            }
+                confirm("Would you like to play again?");
+                var wins = 0;
+                wins++;
+                function RestartGame(){
+                RandomNumber =[Math.floor(Math.random() * 101)];
+
+            }}
             else if (counter > RandomNumber) {
                 alert("You Lose!");
                 confirm("Would you like to play again?");
-            }
-        }
-        );
-            //  counter = 0;
-            //var secondNumber = [10];
-            //for (var i = 0; i < secondNumber.length; i++) {
-            //  var rubyCrystal = $("<img>");
-            //rubyCrystal.addClass("ruby-image");
-            // rubyCrystal.attr("src", "https://image.shutterstock.com/z/stock-photo-rubies-and-raw-crystal-gems-concept-with-closeup-of-a-bunch-of-red-rough-uncut-ruby-crystals-790494358.jpg");
-            //rubyCrystal.attr("data-rubyvalue", secondNumber[i]);
-            // $("#ruby").append(rubyCrystal);
-            //}
-            //var increments = secondNumber[Math.round(Math.random())];
-            // $("#ruby").on("click", function () {
-            //   counter += increments;
-            // alert("your number is: " + counter);
-            //if (counter === targetNumber) {
-            //    alert("You WIN!");
-            // }
-            //else if (counter > targetNumber) {
-            //  alert("You Lose!");
-            //}
-            ;
+                var losses = 0;
+                losses++;
+                function RestartGame(){
+                RandomNumber =[Math.floor(Math.random() * 101)];
+            }}
+
+            document.getElementById("Wins").innerHTML = "Wins: " + wins;
+            document.getElementById("Losses").innerHTML = "Losses: " + losses;
+});
+        
+
+
+        
+    
+        
+        
     </script>
 </body>
 
