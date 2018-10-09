@@ -17,3 +17,13 @@ h1 {
     text-align: center;
     font-size: 200%;
 }
+
+#Wins {
+    text-align: center;
+    font-family: fantasy;
+}
+
+#Losses {
+    text-align: center;
+    font-family: fantasy;
+} 
