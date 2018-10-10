@@ -14,18 +14,24 @@
     <h1>Random Number<span id="number-to-guess"></span></h1>
     <div id="diamond">
     </div>
-    <p id="Wins" ></p>
-    <p id="Losses"></p> 
+    <p id="Wins"></p>
+    <p id="Losses"></p>
 
     <!-- jQuery library link-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script type="text/javascript">
-
+var losses = 0;
+var wins = 0;
         var RandomNumber = [Math.floor(Math.random() * 101)];
         $("#number-to-guess").text(RandomNumber);
         var counter = 0;
         var NumberOptions = [5, 1, 20, 34];
+        function RestartGame() {
+            RandomNumber = [Math.floor(Math.random() * 101)];
+            $("#number-to-guess").text(RandomNumber);
+            counter = 0;
+        }
         for (var i = 0; i < NumberOptions.length; i++) {
             var imageCrystal = $("<img>");
             imageCrystal.addClass("diamond-image");
@@ -43,31 +49,28 @@
             if (counter == RandomNumber) {
                 alert("You WIN!");
                 confirm("Would you like to play again?");
-                var wins = 0;
+                
                 wins++;
-                function RestartGame(){
-                RandomNumber =[Math.floor(Math.random() * 101)];
-
-            }}
+                RestartGame();
+            }
             else if (counter > RandomNumber) {
                 alert("You Lose!");
                 confirm("Would you like to play again?");
-                var losses = 0;
+                
                 losses++;
-                function RestartGame(){
-                RandomNumber =[Math.floor(Math.random() * 101)];
-            }}
+                RestartGame();
+            }
 
             document.getElementById("Wins").innerHTML = "Wins: " + wins;
             document.getElementById("Losses").innerHTML = "Losses: " + losses;
-});
-        
+        });
 
 
-        
-    
-        
-        
+
+
+
+
+
     </script>
 </body>
 
